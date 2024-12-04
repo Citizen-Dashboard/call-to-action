@@ -2,7 +2,7 @@ name: Deploy frontend
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'feat/add-resend-env-variable']
   schedule:
     - cron: '17 * * * *'
 
@@ -40,4 +40,5 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: npm run deploy:worker
