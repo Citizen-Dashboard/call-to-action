@@ -2,7 +2,7 @@ name: Deploy frontend
 
 on:
   push:
-    branches: ['main', 'feat/add-resend-env-variable']
+    branches: ['main']
   schedule:
     - cron: '17 * * * *'
 
